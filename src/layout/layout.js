@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Googlebutton from "../Components/GoogleButton";
 import Header from "./header";
 import MapArea from "./MapArea";
 import PlaceList from "./place_list";
 import Review from "./review";
+import SearchList from "./search_list";
 
 const Container = styled.div`
 padding:0;
@@ -18,8 +18,8 @@ flex-direction:row;
 `;
 
 const Layout = () => {
-    const Tabs={0:null,1:<PlaceList />,2:<Review />}
-    const [activeTab,setActiveTab]=useState(0);
+    const Tabs={1:<PlaceList />,2:<Review />}
+    const [activeTab,setActiveTab]=useState(1);
     const [keyword, setKeyword] = useState('포항 양덕동 맛집')
 
     return (
@@ -27,7 +27,7 @@ const Layout = () => {
             <Header setActiveTab={setActiveTab} setKeyword={setKeyword}/>
             <Body>
                 <MapArea keyword={keyword}/>
-                {Tabs[activeTab]}                
+                {activeTab===3 ?<SearchList keyword={keyword}/>:Tabs[activeTab]}
             </Body>
         </Container>
     )

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-// import Place_list from "./place_list";
-// import Review from "./review";
 
 import Googlebutton from "../Components/GoogleButton";
 
@@ -21,23 +19,36 @@ const Logo = styled.div`
 width:9.740vw;
 `;
 const Search = styled.div`
-width:41.073vw;
-margin-right:24.063vw;
-border-bottom: 1px solid #000;
+width:30vw;
+margin-right:35vw;
+border: 1px solid #000;
+border-radius:4px;
 flex-direction:row;
 display:flex;
 `;
-const Image = styled.div`
+const ImageContainer = styled.div`
 width:4vw;
-height:6vh;
+margin:auto 0;
+`;
+const SearchBtn = styled.button`
+background-color:transparent;
+border:none;
+cursor:pointer;
+&:focus{
+    outline:none;
+}
 `;
 const SearchBar = styled.input`
 background-color:transparent;
-border: none;
+border:none;
+border-right: 1px solid #000;
 width:100%;
 height:3.490vh;
 padding:10px 10px;
 font-size:16px;
+&:focus{
+    outline:none;
+}
 `;
 const Tab = styled.button`
 font-size: 20px;
@@ -50,12 +61,9 @@ background-color:transparent;
 &:hover{  
     font-weight:bold;
   }
-
-`;
-const LoginBtn = styled.button`
-margin-left: 2vw;
-width:5.104vw;
-font-size:18px;
+&:focus{
+    font-weight:bold;
+}
 `;
 
 const Header = ({setActiveTab, setKeyword}) => {
@@ -68,24 +76,29 @@ const Header = ({setActiveTab, setKeyword}) => {
             setActiveTab(2);
         }
     }
+    const handleOnkeyPress = (event) => {
+        if (event.key === 'Enter'){
+            setKeyword(keywordInput);
+        }
+    }
     const handleKeywordInput = (event) => {
         setKeywordInput(event.target.value)
     }
     const handleKeywordSubmit = (event) => {
         setKeyword(keywordInput)
-        //setKeyword(event.target.value)
+        setActiveTab(3);
 
     }
     return (
         <Head>
             <Logo>MeoMeok</Logo>
             <Search>
-                <Image>
-                    <button onClick={handleKeywordSubmit}>
+                <SearchBar type="text" name="search" onChange={handleKeywordInput} onKeyPress={handleOnkeyPress} placeholder="지역/ 가게명/ 메뉴 등으로 검색해주세요."/>
+                <ImageContainer>
+                    <SearchBtn onClick={handleKeywordSubmit}>
                         <img src="imgs/search.png" alt=""/>
-                    </button>
-                </Image>
-                <SearchBar type="text" name="search" onChange={handleKeywordInput} placeholder="지역/ 가게명/ 메뉴 등으로 검색해주세요."/>
+                    </SearchBtn>
+                </ImageContainer>
             </Search>
             <Tab name="list" onClick={onClick}>맛집리스트</Tab>
             <Tab name="review" onClick={onClick}>리뷰쓰기</Tab>

@@ -11,6 +11,7 @@ function MapArea({ keyword }){
     if (!map) return
     const ps = new kakao.maps.services.Places()
 
+
     ps.keywordSearch(keyword, (data, status, _pagination) => {
       if (status === kakao.maps.services.Status.OK) {
         // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
@@ -46,7 +47,7 @@ function MapArea({ keyword }){
         lng: 126.9786567,
       }}
       style={{
-        width: "100vw",
+        width: "70vw",
         height: "87vh",
       }}
       level={3}
