@@ -1,0 +1,13 @@
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+  .on {
+    color: yellow;
+  }
+  .off {
+    color: #ccc;
+  }

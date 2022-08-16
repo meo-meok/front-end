@@ -4,6 +4,8 @@ import Header from "./header";
 import MapArea from "./MapArea";
 import PlaceList from "./place_list";
 import Review from "./review";
+import SearchList from "./search_list";
+import Data from "./data";
 
 const Container = styled.div`
 padding:0;
@@ -50,10 +52,13 @@ const Layout = () => {
 
     return (
         <Container>
+            {/* <Data /> */}
             <Header setActiveTab={setActiveTab} setKeyword={setKeyword}/>
             <Body>
-                 <MapArea keyword={keyword}/>
-                 {Tabs[activeTab]}                
+
+                <Data keyword={keyword}/>
+                <MapArea keyword={keyword}/>
+                {activeTab===3 ?<SearchList keyword={keyword}/>:Tabs[activeTab]}
             </Body>
             <Meomeok></Meomeok>
          </Container>

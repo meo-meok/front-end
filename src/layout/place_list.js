@@ -22,6 +22,9 @@ padding: 0 1.5rem;
 `;
 const ListName = styled.h1`
 margin: auto 0;
+@media screen and (max-width: 1400px) {
+    font-size:26px;
+    }
 `;
 const CategoryNav = styled.div`
 height:6vh;
@@ -34,11 +37,14 @@ border:none;
 cursor:pointer;
 width:100%;
 background-color:transparent;
-font-size:1rem;
+font-size:16px;
 &:hover{  
     font-weight:bold;
     background-color:white;
   }
+@media screen and (max-width:1400px){
+    font-size:14px;
+}
 `;
 const ScrollArea =styled.div`
 height:63.42vh;
@@ -63,7 +69,7 @@ const PlaceList = () => {
         <MainContainer>
             <Container>
                 <ListTop>
-                    <ListName>맛집리스트</ListName>
+                    <ListName>내 주변 맛집</ListName>
                     <SelectBox />
                 </ListTop>
                 <CategoryNav>

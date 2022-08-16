@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import styled from "styled-components";
+import ListCard from "../Components/list_card";
 const MainContainer = styled.div`
 `;
 const Container = styled.div`
@@ -26,7 +27,8 @@ const SearchList = ({keyword}) => {
     return(
         <MainContainer>
             <Container>
-                <h1>{keyword}</h1>
+                {/* <h1>{keyword}</h1> */}
+                <ListCard keyword={keyword}/>
             </Container>
         </MainContainer>
     );

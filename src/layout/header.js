@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-
 import Googlebutton from "../Components/GoogleButton";
+import Data from "./data";
 
 const Head = styled.div`
 width: 100vw;
@@ -25,10 +25,16 @@ border: 1px solid #000;
 border-radius:4px;
 flex-direction:row;
 display:flex;
+@media screen and (max-width: 1400px) {
+    margin-right:29vw;
+    }
 `;
 const ImageContainer = styled.div`
-width:4vw;
+width:3.8vw;
 margin:auto 0;
+`;
+const Image = styled.img`
+width:90%;
 `;
 const SearchBtn = styled.button`
 background-color:transparent;
@@ -49,6 +55,10 @@ font-size:16px;
 &:focus{
     outline:none;
 }
+@media screen and (max-width: 1400px) {
+    font-size:14px;
+    height:3.2vh;
+    }
 `;
 const Tab = styled.button`
 font-size: 20px;
@@ -64,6 +74,10 @@ background-color:transparent;
 &:focus{
     font-weight:bold;
 }
+@media screen and (max-width: 1400px) {
+    font-size:18px;
+    
+    }
 `;
 
 const Header = ({setActiveTab, setKeyword}) => {
@@ -79,6 +93,7 @@ const Header = ({setActiveTab, setKeyword}) => {
     const handleOnkeyPress = (event) => {
         if (event.key === 'Enter'){
             setKeyword(keywordInput);
+            setActiveTab(3);
         }
     }
     const handleKeywordInput = (event) => {
@@ -96,7 +111,7 @@ const Header = ({setActiveTab, setKeyword}) => {
                 <SearchBar type="text" name="search" onChange={handleKeywordInput} onKeyPress={handleOnkeyPress} placeholder="지역/ 가게명/ 메뉴 등으로 검색해주세요."/>
                 <ImageContainer>
                     <SearchBtn onClick={handleKeywordSubmit}>
-                        <img src="imgs/search.png" alt=""/>
+                        <Image src="imgs/search.png" alt=""/>
                     </SearchBtn>
                 </ImageContainer>
             </Search>
