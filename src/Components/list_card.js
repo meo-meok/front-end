@@ -3,21 +3,17 @@ import styled from "styled-components";
 import Data from "../layout/data";
 
 const Card = styled.div`
-height:18.7vh;
-border-bottom:1px solid black;
+height:20vh;
 display:flex;
-padding: 0 1.5rem;
-font-size:2rem;
-font-weight:bold;
+padding: 1rem 1.5rem;
 
 `;
 
 function ListCard({keyword}){
     return(
-        <div>
-            <Card>{keyword}</Card>
-            <Data keyword={keyword}/>
-        </div>
+        <Card>
+                <Data keyword={keyword}/>   
+        </Card>
     )
 }
 export default ListCard;
