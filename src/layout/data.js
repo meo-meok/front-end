@@ -11,9 +11,12 @@ function Data({keyword}) {
       .then(results=>{
         setData(results)
         setName(keyword)
+        
         results.map((result)=>{
-          if(result.restaurant_name === keyword) {
-            setRes(result);}
+          if(result.restaurant_name.indexOf(keyword) !== -1) 
+          {
+            setRes(result);
+          }
           })
 
       });
