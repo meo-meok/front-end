@@ -31,7 +31,7 @@ const Layout = () => {
         <Container>
             <Header setActiveTab={setActiveTab} setKeyword={setKeyword}/>
             <Body>
-                {activeTab===1 ? <CategoryMap categoryId={categoryId}/>:<MapArea keyword={keyword}/>}
+                {activeTab===1 ?<CategoryMap categoryId={categoryId}/>:<MapArea categoryId={categoryId}/>}
                 {activeTab===3 ?<SearchList keyword={keyword} secondReturn={setSearchData}/>:Tabs[activeTab]}
             </Body>
     
