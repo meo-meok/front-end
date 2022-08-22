@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 
-const PlaceInfo = styled.div`
+const Container = styled.div`
+border-bottom:1px solid black;
 width:100%;
 display:flex;
 flex-direction:column;
-border-bottom:1px solid black;
+`;
+const PlaceInfo = styled.div`
+padding: 0 1.5rem;
 `;
 const Name = styled.h1`
 margin-bottom:0rem;
@@ -21,11 +24,13 @@ const Info = styled.p`
 `;
 function ShowList(props){
   const list = props.searchDataList.map((datalist)=>
-    <PlaceInfo key={datalist.id}>
-      <Name>{datalist.restaurant_name}</Name>
-      <Info>{datalist.address}</Info>
-      <Info>{datalist.number}</Info>
-    </PlaceInfo>
+    <Container>
+        <PlaceInfo key={datalist.id}>
+        <Name>{datalist.restaurant_name}</Name>
+        <Info>{datalist.address}</Info>
+        <Info>{datalist.number}</Info>
+        </PlaceInfo>
+    </Container>
   )
   return(
     <div>{list}</div>
@@ -56,7 +61,6 @@ function DataCategory({categoryId}) {
   
     return (
       <div>
-        
         {searchDataList &&<ShowList searchDataList={searchDataList}/>}
       </div>
     )

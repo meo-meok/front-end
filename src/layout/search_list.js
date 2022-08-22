@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import DataSearching from "../Components/dataSearching";
 const MainContainer = styled.div`
@@ -19,12 +19,16 @@ text-align: justify;
 //     display:none;
   }
 `;
-const SearchList = ({keyword}) => {
+const SearchList = ({keyword, secondReturn}) => {
+
+    const [data, setData] = useState([])
+    secondReturn(data)
+
     return(
         <MainContainer>
             <Container>
                 <ScrollArea>
-                <DataSearching keyword={keyword}/>
+                <DataSearching keyword={keyword} DataReturn={setData}/>
                 </ScrollArea>
             </Container>
         </MainContainer>

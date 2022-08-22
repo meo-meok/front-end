@@ -5,6 +5,7 @@ import MapArea from "./MapArea";
 import PlaceList from "./place_list";
 import Review from "./review";
 import SearchList from "./search_list";
+import CategoryMap from "./CategoryMap";
 
 const Container = styled.div`
 padding:0;
@@ -19,16 +20,19 @@ flex-direction:row;
 
 
 const Layout = () => {
-    const Tabs={1:<PlaceList />,2:<Review />}
     const [activeTab,setActiveTab]=useState(1);
     const [keyword, setKeyword] = useState('포항시 북구 장량로 114번길 18')
+    const [categoryId, setCateId] = useState(1);
+    const Tabs={1:<PlaceList setCateId={setCateId}/>,2:<Review /> }
 
+    const [searchData, setSearchData] = useState([]);
+    
     return (
         <Container>
             <Header setActiveTab={setActiveTab} setKeyword={setKeyword}/>
             <Body>
-                <MapArea keyword={keyword}/>
-                {activeTab===3 ?<SearchList keyword={keyword}/>:Tabs[activeTab]}
+                {activeTab===1 ? <CategoryMap categoryId={categoryId}/>:<MapArea keyword={keyword}/>}
+                {activeTab===3 ?<SearchList keyword={keyword} secondReturn={setSearchData}/>:Tabs[activeTab]}
             </Body>
     
         </Container>

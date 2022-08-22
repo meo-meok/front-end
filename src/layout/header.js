@@ -14,8 +14,12 @@ align-items:center;
 border:1px solid black;
 box-sizing:border-box;
 `;
-const Logo = styled.div`
+const Logo = styled.button`
 width:9.740vw;
+border:none;
+background-color:transparent;
+cursor:pointer;
+font-size:20px;
 `;
 const Search = styled.div`
 width:30vw;
