@@ -36,7 +36,7 @@ function MapArea({ keyword, setActiveTab }){
           })
           // @ts-ignore
         }
-        //bounds.extend(new kakao.maps.LatLng(sw, ne))
+        bounds.extend(new kakao.maps.LatLng(sw, ne))
         setMarkers(markers)
 
         // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
