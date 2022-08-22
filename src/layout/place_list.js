@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import SelectBox from "../Components/selectBox";
-import ListCard from "../Components/list_card";
+import DataCategory from "../Components/dataCategory";
 
 const MainContainer = styled.div`
 `;
@@ -55,16 +55,20 @@ text-align: justify;
   }
 `;
 
-function NavButton ({Names}){
+function NavButton ({Names,setCategoryId}){
+    const onClick =()=>{
+        setCategoryId(Names[0])
+    }
     return(
-        <NavBtn>
-            {Names}
+        <NavBtn onClick={onClick}>
+            {Names[1]}
         </NavBtn>
     )
 }
 
 const PlaceList = () => {
-    const NAMES = ["한식","중식","양식","일식","디저트"]
+    const NAMES = {1:"한식/분식",2:"돈까스/회/일식",3:"중식",4:"양식",5:"아시안"}
+    const [categoryId,setCategoryId]=useState(1);
     return (
         <MainContainer>
             <Container>
@@ -73,18 +77,10 @@ const PlaceList = () => {
                     <SelectBox />
                 </ListTop>
                 <CategoryNav>
-                    {NAMES.map((name)=><NavButton Names={name}></NavButton>)}
+                    {Object.entries(NAMES).map((e,idx)=><NavButton Names={e} setCategoryId={setCategoryId}></NavButton>)}
                 </CategoryNav>
                 <ScrollArea>
-                    <ListCard />
-                    <ListCard />
-                    <ListCard />
-                    <ListCard />
-                    <ListCard />
-                    <ListCard />
-                    <ListCard />
-                    <ListCard />
-                    <ListCard />
+                    <DataCategory categoryId={categoryId}/>
                 </ScrollArea>
             </Container>
         </MainContainer>

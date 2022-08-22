@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import ReviewForm from "../Components/reviewFrom";
-import StarTating from "../Components/StarRating";
+import StarRating from "../Components/StarRating";
 const MainContainer = styled.div`
 `;
 const Container = styled.div`
@@ -60,7 +60,7 @@ const Review = () => {
                 </PlaceInfo>
                 <ReviewWrite>
                   <Name>리뷰쓰기</Name>
-                  <StarTating />
+                  <StarRating />
                   {activeReview && <ReviewForm setActiveReview={setActiveReview} setReviewContent={setReviewContent}/>}
                   {reviewcontent}
                 </ReviewWrite>

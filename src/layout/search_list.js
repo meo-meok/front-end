@@ -1,6 +1,6 @@
-import React,{useState} from "react";
+import React from "react";
 import styled from "styled-components";
-import ListCard from "../Components/list_card";
+import DataSearching from "../Components/dataSearching";
 const MainContainer = styled.div`
 `;
 const Container = styled.div`
@@ -11,24 +11,21 @@ float:right;
 border:1px solid black;
 box-sizing:border-box;
 `;
-const PlaceInfo = styled.div`
-height:34vh;
-border-bottom:1px solid black;
-display:flex;
-flex-direction:column;
-padding: 0 1.5rem;
-`;
-const ReviewWrite = styled.div`
-height:50vh;
-padding: 0 1.5rem;
-
+const ScrollArea =styled.div`
+height:100%;
+overflow: auto;
+text-align: justify;
+// ::-webkit-scrollbar {
+//     display:none;
+  }
 `;
 const SearchList = ({keyword}) => {
     return(
         <MainContainer>
             <Container>
-                {/* <h1>{keyword}</h1> */}
-                <ListCard keyword={keyword}/>
+                <ScrollArea>
+                <DataSearching keyword={keyword}/>
+                </ScrollArea>
             </Container>
         </MainContainer>
     );

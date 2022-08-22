@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import "../layout/Star.css"
 
-// const param = {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json',
-//   },
-//   body: JSON.stringify({title:title, body:body}) 
-//   // body의 데이터 유형은 반드시 "Content-Type" 헤더와 일치해야 함
-//   // param의 형식으로 db에 fetch하게됨
+
+// function postRating () 
+// {
+//   const param = {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify({user:, restaurant:, star, post_date, post_body}) 
+//   }
+//   fetch('', param) 
+//   .then(type=>type.json())
+//   .then(result=>{});
 // }
-// fetch('http://localhost:3333/topics/', param) 
-// .then(type=>type.json())
-// .then(result=>{});
 
 const StarRating = () => {
   const [rating, setRating] = useState(0);
@@ -26,7 +28,10 @@ const StarRating = () => {
             type="button"
             key={index}
             className={index <= (hover || rating) ? "on" : "off"}
-            onClick={() => setRating(index)}
+            onClick={() => {
+              setRating(index);
+              // postRating(); 
+            }}
             onMouseEnter={() => setHover(index)}
             onMouseLeave={() => setHover(rating)}
           >

@@ -16,8 +16,13 @@ function MapArea({ keyword, setActiveTab }){
       if (status === kakao.maps.services.Status.OK) {
         // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
         // LatLngBounds 객체에 좌표를 추가합니다
-        //ㅎ
-        const bounds = new kakao.maps.LatLngBounds()
+        var sw = new kakao.maps.LatLng(36.055304, 129.363541);
+        var ne  = new kakao.maps.LatLng(36.098447, 129.401476);
+
+        var ss = new kakao.maps.LatLng(36, 129);
+        var nn  = new kakao.maps.LatLng(37, 130);
+
+        const bounds = new kakao.maps.LatLngBounds(ss, nn)
         let markers = []
 
         for (var i = 0; i < data.length; i++) {
@@ -30,8 +35,8 @@ function MapArea({ keyword, setActiveTab }){
             content: data[i].place_name,
           })
           // @ts-ignore
-          bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x))
         }
+        //bounds.extend(new kakao.maps.LatLng(sw, ne))
         setMarkers(markers)
 
         // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
