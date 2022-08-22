@@ -10,6 +10,13 @@ flex-direction:column;
 const PlaceInfo = styled.div`
 padding: 0 1.5rem;
 `;
+const SelectPlace = styled.a`
+cursor:pointer;
+text-align:left;
+&:hover{  
+  background-color:white;
+}
+`;
 const Name = styled.h1`
 margin-bottom:0rem;
 font-size:26px;
@@ -22,21 +29,30 @@ const Info = styled.p`
     font-size:14px;
     }
 `;
-function ShowList(props){
-  const list = props.searchDataList.map((datalist)=>
+const ShowList=({searchDataList,setIsShowPlaceDetail,setPlaceDetailInfo})=>{
+  const handlePlaceDetailView = (index)=>{
+    return (
+      setIsShowPlaceDetail(true),
+      setPlaceDetailInfo(searchDataList[index])
+    )
+  }
+  const list = searchDataList.map((datalist,index)=>
     <Container>
-        <PlaceInfo key={datalist.id}>
-        <Name>{datalist.restaurant_name}</Name>
-        <Info>{datalist.address}</Info>
-        <Info>{datalist.number}</Info>
+      <SelectPlace key={datalist.id} onClick={()=>{handlePlaceDetailView(index);}}>
+        <PlaceInfo>
+          <Name>{datalist.restaurant_name}</Name>
+          <Info>{datalist.address}</Info>
+          <Info>{datalist.number}</Info>
         </PlaceInfo>
+      </SelectPlace>
     </Container>
+    
   )
   return(
     <div>{list}</div>
   )
 }
-function DataCategory({categoryId}) {
+function DataCategory({categoryId,setIsShowPlaceDetail,setPlaceDetailInfo}) {
     const [searchDataList,setSearchDataList]=useState('');
     var searchData = [];
   
@@ -61,7 +77,7 @@ function DataCategory({categoryId}) {
   
     return (
       <div>
-        {searchDataList &&<ShowList searchDataList={searchDataList}/>}
+        {searchDataList &&<ShowList searchDataList={searchDataList} setIsShowPlaceDetail={setIsShowPlaceDetail} setPlaceDetailInfo={setPlaceDetailInfo}/>}
       </div>
     )
 }

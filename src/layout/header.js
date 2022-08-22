@@ -110,12 +110,14 @@ const Header = ({setActiveTab, setKeyword}) => {
     }
     return (
         <Head>
-            <Logo onClick={()=>{window.location.reload();}}>MeoMeok</Logo>
+            <Logo onClick={()=>{window.location.reload();}}>
+                <Image src="imgs/meomeokz_logo_trans.png" />
+            </Logo>
             <Search>
                 <SearchBar type="text" name="search" onChange={handleKeywordInput} onKeyPress={handleOnkeyPress} placeholder="지역/ 가게명/ 메뉴 등으로 검색해주세요."/>
                 <ImageContainer>
                     <SearchBtn onClick={handleKeywordSubmit}>
-                        <Image src="imgs/search.png" alt=""/>
+                        <Image src="imgs/search_logo.png" alt=""/>
                     </SearchBtn>
                 </ImageContainer>
             </Search>
