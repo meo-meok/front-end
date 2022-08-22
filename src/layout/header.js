@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useLocation } from "react";
 import styled from "styled-components";
 import Googlebutton from "../Components/GoogleButton";
 
@@ -110,7 +110,7 @@ const Header = ({setActiveTab, setKeyword}) => {
     }
     return (
         <Head>
-            <Logo>MeoMeok</Logo>
+            <Logo onClick={()=>{window.location.reload();}}>MeoMeok</Logo>
             <Search>
                 <SearchBar type="text" name="search" onChange={handleKeywordInput} onKeyPress={handleOnkeyPress} placeholder="지역/ 가게명/ 메뉴 등으로 검색해주세요."/>
                 <ImageContainer>

@@ -2,6 +2,6 @@ import React, { useState } from "react";
 
 function MeoMeokLogo ()
 {
-    return <button> </button>
+    return <div onClick={location.reload()}> </div>
 }
 export default MeoMeokLogo

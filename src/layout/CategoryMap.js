@@ -44,7 +44,6 @@ function CategoryMap ({categoryId, setActiveTab}){
             )
             console.log(searchData[i].restaurant_name + "\n")
         }
-        map.setBounds(searchData[2].latitude, searchData[2].longitude)
         setMarkers(markers)
       });
     }, [categoryId]);
