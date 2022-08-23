@@ -30,7 +30,7 @@ const Info = styled.p`
     }
 `;
 const ShowList=({searchDataList,setIsShowPlaceDetail,setPlaceDetailInfo})=>{
-  const handlePlaceDetailView = (index)=>{
+const handlePlaceDetailView = (index)=>{
     return (
       setIsShowPlaceDetail(true),
       setPlaceDetailInfo(searchDataList[index])
