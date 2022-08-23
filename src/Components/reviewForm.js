@@ -1,8 +1,8 @@
 import React,{useState} from "react";
 import styled from "styled-components";
-
+import StarRating from "./StarRating";
 const Container = styled.div`
-height:25vh;
+height:12vh;
 `;
 
 const Form = styled.form`
@@ -71,6 +71,7 @@ const ReviewForm = ({setActiveReview,setReviewContent}) =>{
         <Container>
             <ReviewInfo>
                 <UserInfo><p>👩 User12354865</p></UserInfo>
+                <StarRating />
                 <TextLimit>{textArea.length}/100</TextLimit>
             </ReviewInfo>
             <Form>

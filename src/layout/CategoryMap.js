@@ -46,7 +46,7 @@ function CategoryMap ({categoryId, setActiveTab}){
         }
         setMarkers(markers)
       });
-    }, [categoryId]);
+    });
 
     return (
       <Map // 지도를 표시할 Container

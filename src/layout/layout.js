@@ -23,17 +23,20 @@ const Layout = () => {
     const [activeTab,setActiveTab]=useState(1);
     const [keyword, setKeyword] = useState('포항시 북구 장량로 114번길 18')
     const [categoryId, setCateId] = useState(1);
-    const Tabs={1:<PlaceList setCateId={setCateId}/>,2:<Review /> }
+    const Tabs={1:<PlaceList setCateId={setCateId}/>}
 
     const [searchData, setSearchData] = useState([]);
-    console.log("Layout1 : ", searchData)
+    // console.log("Layout1 : ", searchData)
     
     return (
         <Container>
+            {console.log(activeTab)}
             <Header setActiveTab={setActiveTab} setKeyword={setKeyword}/>
             <Body>
-                {activeTab===1 ? <CategoryMap categoryId={categoryId}/>:<MapArea keyword={keyword} datalist={searchData}/>}
-                {activeTab===3 ?<SearchList keyword={keyword} ReturnData={setSearchData}/>:Tabs[activeTab]}
+                {activeTab===1 ? <CategoryMap categoryId={categoryId}/>:<MapArea keyword={keyword} activeTab={activeTab} searchData={searchData}/>}
+                {activeTab===3 ?
+                <SearchList keyword={keyword} ReturnData={setSearchData}/>:
+                <PlaceList setCateId={setCateId} setActiveTab={setActiveTab} setKeyword={setKeyword} setSearchData={setSearchData}/>}
             </Body>
     
         </Container>

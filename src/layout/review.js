@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import ReviewForm from "../Components/reviewFrom";
+import ReviewForm from "../Components/reviewForm";
 import StarRating from "../Components/StarRating";
 const MainContainer = styled.div`
 `;

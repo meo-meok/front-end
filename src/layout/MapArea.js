@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 
-function MapArea({ keyword, setActiveTab, datalist }) {
+function MapArea({ keyword,activeTab, setActiveTab, searchData }) {
   const [info, setInfo] = useState()
   const [markers, setMarkers] = useState([])
   const [map, setMap] = useState()
@@ -12,12 +12,19 @@ function MapArea({ keyword, setActiveTab, datalist }) {
     const ps = new kakao.maps.services.Places()
     const bounding = new kakao.maps.LatLngBounds()
 
-    console.log("Map Area : ", datalist)
-
+    console.log("Map Area : ", searchData)
+  // console.log('activeTab',activeTab)
     const name_list = []
-    for (var i = 0; i < datalist.length; i++) {
-      name_list.push(datalist[i].restaurant_name);
+    if(activeTab===2){
+      console.log('activeTab',activeTab)
+      name_list.push(keyword)
+    }else{
+      for (var i = 0; i < searchData.length; i++) {
+        name_list.push(searchData[i].restaurant_name);
+      }
     }
+    
+    console.log("keyword",keyword)
     console.log("name_list", name_list)
     ps.keywordSearch(keyword, (data, status, _pagination) => {
       if (status === kakao.maps.services.Status.OK) {
@@ -55,7 +62,7 @@ function MapArea({ keyword, setActiveTab, datalist }) {
           new kakao.maps.LatLng(36.09245, 129.41006))
     }
     )
-  }, [map, datalist])
+  }, [map, searchData])
 
   return (
     <Map // 로드뷰를 표시할 Container

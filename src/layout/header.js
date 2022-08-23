@@ -88,9 +88,6 @@ const Header = ({setActiveTab, setKeyword}) => {
         if (event.target.name === "list"){
             setActiveTab(1);
         }
-        else if (event.target.name === "review") {
-            setActiveTab(2);
-        }
     }
     const handleOnkeyPress = (event) => {
         if (event.key === 'Enter'){
@@ -121,7 +118,6 @@ const Header = ({setActiveTab, setKeyword}) => {
                 </ImageContainer>
             </Search>
             <Tab name="list" onClick={onClick}>맛집리스트</Tab>
-            <Tab name="review" onClick={onClick}>리뷰쓰기</Tab>
 
             <Googlebutton/>
         </Head>

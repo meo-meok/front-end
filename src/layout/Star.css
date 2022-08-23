@@ -1,10 +1,4 @@
-button {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 3rem;
-  }
+
   .on {
     color: palevioletred;
   }
