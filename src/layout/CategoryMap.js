@@ -42,8 +42,8 @@ function CategoryMap ({categoryId, setActiveTab}){
             bounding.extend(
                 new kakao.maps.LatLng(searchData[i].latitude, searchData[i].longitude)
             )
-            console.log(searchData[i].restaurant_name + "\n")
         }
+        map.setBounds(bounding)
         setMarkers(markers)
       });
     });
