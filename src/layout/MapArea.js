@@ -10,7 +10,7 @@ function MapArea({ keyword, setActiveTab, datalist }) {
   useEffect(() => {
     if (!map) return
     const ps = new kakao.maps.services.Places()
-    const bounds = new kakao.maps.LatLngBounds()
+    const bounding = new kakao.maps.LatLngBounds()
 
     console.log("Map Area : ", datalist)
 
@@ -46,7 +46,7 @@ function MapArea({ keyword, setActiveTab, datalist }) {
         setMarkers(markers)
 
         // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
-        map.setBounds(bounds)
+        map.setBounds(bounding)
       }
     }, {
       bounds:
@@ -56,7 +56,7 @@ function MapArea({ keyword, setActiveTab, datalist }) {
     }
     )
   }, [map, datalist])
-  
+
   return (
     <Map // 로드뷰를 표시할 Container
       center={{
