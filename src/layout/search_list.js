@@ -6,18 +6,35 @@ const MainContainer = styled.div`
 `;
 const Container = styled.div`
 width:30vw;
-height:87vh;
-background-color:#ddd;
+height:91vh;
+background-color:#white;
 float:right;
-border:1px solid black;
+border-left:2px solid #ddd;
 box-sizing:border-box;
 `;
+const ListTop = styled.div`
+height:13.9vh;
+border-bottom:2px solid #000055;
+box-sizing:border-box;
+display:flex;
+justify-content: space-between;
+margin: 0 1.5rem;
+margin-bottom:1rem;
+`;
+const ListName = styled.h1`
+margin: auto 0;
+font-size:24px;
+color:#000055;
+@media screen and (max-width: 1400px) {
+    font-size:20px;
+    }
+`;
 const ScrollArea = styled.div`
-height:100%;
+height:72.42vh;
 overflow: auto;
 text-align: justify;
-// ::-webkit-scrollbar {
-//     display:none;
+::-webkit-scrollbar {
+    display:none;
   }
 `;
 const SearchList = ({ keyword, ReturnData }) => {
@@ -51,6 +68,9 @@ const SearchList = ({ keyword, ReturnData }) => {
     return (
         <MainContainer>
             <Container>
+                <ListTop>
+                    <ListName>검색 결과</ListName>
+                </ListTop>
                 <ScrollArea>
                     <DataSearching searchDataList={searchDataList} />
                 </ScrollArea>

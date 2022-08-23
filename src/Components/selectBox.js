@@ -3,7 +3,9 @@ import styled from "styled-components";
 
 const Select = styled.select`
 margin: auto 0;
-padding: 0.3rem 1rem;
+padding: 0.3rem 0.5rem;
+border-radius:10px;
+border:1px solid #000055;
 font-size: 13px;
 `;
 const OPITIONS = [

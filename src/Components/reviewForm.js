@@ -14,14 +14,14 @@ const TextArea = styled.textarea`
 width:100%;
 height:100%;
 resize:none;
-font-size: 14px;
+font-size: 12px;
 border: 10px solid transparent;
 box-sizing:border-box;
 &:focus{
     outline:none;
 }
 @media screen and (max-width: 1400px) {
-    font-size:12px;
+    font-size:10px;
     }
 `;
 const ReviewInfo = styled.div`
@@ -30,6 +30,10 @@ display:flex;
 flex-direction:row;
 width:100%;
 `;
+const UserStarContainer = styled.div`
+display:flex;
+flex-direction:row;
+`;
 const UserInfo = styled.div`
 font-size:12px;
 `;
@@ -37,11 +41,11 @@ const TextLimit = styled.p`
 font-size:12px;
 `;
 const SubmitContainer = styled.div`
-margin-top:1rem;
-text-align:center;
+margin-top:0.5rem;
+text-align:right;
 `;
 const SubmitBtn = styled.button`
-font-size:16px;
+font-size:14px;
 border-radius:5px;
 border:1px solid black;
 background-color:#fff;
@@ -50,7 +54,7 @@ cursor:pointer;
     background-color:#ddd;
 }
 @media screen and (max-width: 1400px) {
-    font-size:14px;
+    font-size:12px;
     }
 `;
 const ReviewForm = ({setActiveReview,setReviewContent}) =>{
@@ -70,8 +74,10 @@ const ReviewForm = ({setActiveReview,setReviewContent}) =>{
     return(
         <Container>
             <ReviewInfo>
-                <UserInfo><p>👩 User12354865</p></UserInfo>
-                <StarRating />
+                <UserStarContainer>
+                    <UserInfo><p>👩 User12354865</p></UserInfo>
+                    <StarRating />
+                </UserStarContainer>
                 <TextLimit>{textArea.length}/100</TextLimit>
             </ReviewInfo>
             <Form>

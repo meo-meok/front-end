@@ -57,7 +57,7 @@ function CategoryMap ({categoryId, setActiveTab}){
         }}
         style={{
             width: "70vw",
-            height: "87vh",
+            height: "91vh",
         }}
         level={3} // 지도의 확대 레벨
         onCreate={setMap}

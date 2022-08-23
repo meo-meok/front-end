@@ -10,57 +10,57 @@ flex-direction:row;
 `;
 const Container = styled.div`
 width:30vw;
-height:87vh;
-background-color:#ddd;
+height:91vh;
+background-color:white;
 float:right;
-border:1px solid black;
+border-left:2px solid #ddd;
 box-sizing:border-box;
 `;
 const ListTop = styled.div`
-height:14.9vh;
-border-bottom:1px solid black;
+height:13.9vh;
+border-bottom:2px solid #000055;
+box-sizing:border-box;
 display:flex;
 justify-content: space-between;
-padding: 0 1.5rem;
+margin: 0 1.5rem;
+margin-bottom:1rem;
 `;
 const ListName = styled.h1`
 margin: auto 0;
+font-size:24px;
+color:#000055;
 @media screen and (max-width: 1400px) {
-    font-size:26px;
+    font-size:20px;
     }
 `;
 const CategoryNav = styled.div`
 height:6vh;
-border-bottom:1px solid black;
-display:flex;
-justify-content: space-between;
-white-space: nowrap;
-overflow: auto;
-// ::-webkit-scrollbar {
-//     display:none;
-//   }
+padding:0 1.5rem 1rem 1.5rem;
 `;
 const NavBtn = styled.button`
-border:none;
-border-right:1px solid black;
+border:1px solid #444444;
+border-radius:10px;
+margin-right:0.2rem;
+margin-bottom:0.2rem;
+padding: 5px 5px;
 cursor:pointer;
-width:100%;
-background-color:transparent;
-font-size:16px;
+background-color:white;
+font-size:13px;
 &:hover{  
     font-weight:bold;
-    background-color:white;
+    background-color:#000055;
+    color:white;
   }
 @media screen and (max-width:1400px){
     font-size:14px;
 }
 `;
 const ScrollArea =styled.div`
-height:63.42vh;
+height:67.42vh;
 overflow: auto;
 text-align: justify;
-// ::-webkit-scrollbar {
-//     display:none;
+::-webkit-scrollbar {
+    display:none;
   }
 `;
 

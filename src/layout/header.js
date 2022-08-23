@@ -5,8 +5,8 @@ import Googlebutton from "../Components/GoogleButton";
 
 const Head = styled.div`
 width: 100vw;
-height: 13vh;
-background: #D9D9D9;
+height: 9vh;
+background: #000055;
 paddings:0px 10px 0px 10px;
 flex-direction:row;
 display:flex;
@@ -25,25 +25,30 @@ font-size:20px;
 const Search = styled.div`
 width:30vw;
 height:5vh;
-margin-right:35vw;
+margin-right:45vw;
 border: 1px solid #000;
 border-radius:4px;
 flex-direction:row;
 display:flex;
+background-color:white;
 @media screen and (max-width: 1400px) {
-    margin-right:29vw;
+    margin-right:39vw;
     }
 `;
 const ImageContainer = styled.div`
 width:3.8vw;
 `;
-const Image = styled.img`
+const HomeImage = styled.img`
 width:70%;
+`;
+const SearchImage = styled.img`
+width:2rem;
 `;
 const SearchBtn = styled.button`
 background-color:transparent;
 border:none;
 cursor:pointer;
+margin-top:0.3rem;
 &:focus{
     outline:none;
 }
@@ -64,13 +69,16 @@ font-size:16px;
     }
 `;
 const Tab = styled.button`
-font-size: 20px;
-border: none;
+font-size: 16px;
+color:white;
+border: 1px solid white;
+border-radius: 10px;
 outline: none;
 cursor: pointer;
-padding: 14px 16px;
+padding: 12px 14px;
 transition: 0.3s;
 background-color:transparent;
+margin-right:1rem;
 &:hover{  
     font-weight:bold;
   }
@@ -78,7 +86,7 @@ background-color:transparent;
     font-weight:bold;
 }
 @media screen and (max-width: 1400px) {
-    font-size:18px;
+    font-size:16px;
     
     }
 `;
@@ -107,12 +115,12 @@ const Header = ({setActiveTab, setKeyword}) => {
     }
     return (
         <Head>
-            <Logo><Image src="imgs/meomeokz_logo_trans.png" /></Logo>
+            <Logo><HomeImage src="imgs/meomeokz_logo_dark.png" /></Logo>
             <Search>
                 <SearchBar type="text" name="search" onChange={handleKeywordInput} onKeyPress={handleOnkeyPress} placeholder="지역/ 가게명/ 메뉴 등으로 검색해주세요."/>
                 <ImageContainer>
                     <SearchBtn onClick={handleKeywordSubmit}>
-                        <Image src="imgs/search_logo.png" alt=""/>
+                        <SearchImage src="imgs/search_logo.png" alt=""/>
                     </SearchBtn>
                 </ImageContainer>
             </Search>
