@@ -26,13 +26,14 @@ const Layout = () => {
     const Tabs={1:<PlaceList setCateId={setCateId}/>,2:<Review /> }
 
     const [searchData, setSearchData] = useState([]);
+    console.log("Layout1 : ", searchData)
     
     return (
         <Container>
             <Header setActiveTab={setActiveTab} setKeyword={setKeyword}/>
             <Body>
-                {activeTab===1 ?<CategoryMap categoryId={categoryId}/>:<MapArea categoryId={categoryId}/>}
-                {activeTab===3 ?<SearchList keyword={keyword} secondReturn={setSearchData}/>:Tabs[activeTab]}
+                {activeTab===1 ? <CategoryMap categoryId={categoryId}/>:<MapArea keyword={keyword} datalist={searchData}/>}
+                {activeTab===3 ?<SearchList keyword={keyword} ReturnData={setSearchData}/>:Tabs[activeTab]}
             </Body>
     
         </Container>

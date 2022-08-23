@@ -23,6 +23,7 @@ font-size:20px;
 `;
 const Search = styled.div`
 width:30vw;
+height:5vh;
 margin-right:35vw;
 border: 1px solid #000;
 border-radius:4px;
@@ -34,10 +35,9 @@ display:flex;
 `;
 const ImageContainer = styled.div`
 width:3.8vw;
-margin:auto 0;
 `;
 const Image = styled.img`
-width:90%;
+width:70%;
 `;
 const SearchBtn = styled.button`
 background-color:transparent;
@@ -52,7 +52,6 @@ background-color:transparent;
 border:none;
 border-right: 1px solid #000;
 width:100%;
-height:3.490vh;
 padding:10px 10px;
 font-size:16px;
 &:focus{
