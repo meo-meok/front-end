@@ -39,7 +39,6 @@ const Layout = () => {
                 {activeMap===1 ? 
                 <CategoryMap categoryId={categoryId}/>:
                 <MapArea 
-                    keyword={keyword} 
                     activeTab={activeTab} 
                     searchData={searchData} 
                     activeMap={activeMap}/>}

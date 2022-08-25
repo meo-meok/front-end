@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 
-function MapArea({ keyword, activeTab, setActiveTab, searchData, activeMap }) {
+function MapArea({ activeTab, searchData, activeMap }) {
     const [info, setInfo] = useState()
     const [markers, setMarkers] = useState([])
     const [map, setMap] = useState()
@@ -12,27 +12,12 @@ function MapArea({ keyword, activeTab, setActiveTab, searchData, activeMap }) {
         const ps = new kakao.maps.services.Places()
         const bounding = new kakao.maps.LatLngBounds()
 
-        const name_list = []
         if (activeTab === 1) {
             if (activeMap === 2) {
-                // console.log('activeTab',activeMap)
                 searchData = [searchData]
-                name_list.push(keyword)
             }
         }
-        else {
-            for (var i = 0; i < searchData.length; i++) {
-                name_list.push(searchData[i].restaurant_name);
-            }
-            if (activeMap === 3) {
-                // console.log('activeTab',activeMap)
-                name_list.push(keyword)
-            }
-        }
-
         if (searchData.length > 0) {
-            console.log("name_list", name_list)
-
             let markers = []
             console.log("MapArea2 : ", searchData.latitude)
             for (var i = 0; i < searchData.length; i++) {
