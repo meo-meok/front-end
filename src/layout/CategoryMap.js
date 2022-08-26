@@ -1,5 +1,4 @@
 /*global kakao */
-
 import { useState, useEffect} from "react";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 
