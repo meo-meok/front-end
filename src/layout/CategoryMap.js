@@ -1,5 +1,4 @@
 /*global kakao */
-
 import { useState, useEffect} from "react";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 
@@ -15,7 +14,7 @@ function CategoryMap ({categoryId, setActiveTab}){
     useEffect(() => {
       if (!map) return
 
-      fetch('https://jeonjin.pythonanywhere.com/restaurants/')
+      fetch('https://jeonjin.pythonanywhere.com/restaurants')
       .then(results=>results.json())
       .then(results=>{
         results.map((result)=>{
