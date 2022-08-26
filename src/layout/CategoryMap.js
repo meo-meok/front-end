@@ -51,7 +51,8 @@ function CategoryMap ({categoryId, setActiveTab}){
     return (
       <Map // 지도를 표시할 Container
         center={{
-          // 지도의 중심좌표
+          // 지도의 중심좌표 d
+          //hello
           lat: 36.081990132484904,
           lng: 129.38588514738146,
         }}
