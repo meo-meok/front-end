@@ -1,18 +1,16 @@
-# Getting Started with Create React App
+# 오늘 머먹지?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+2022 한동대학교 웹 풀스택 개발 캠프를 참여해 진행한 프로젝트다.
 
-## Available Scripts
+포항시 북구 양덕동의 맛집 리스트를 볼 수 있는 웹사이트.
 
-In the project directory, you can run:
+## Team
 
-### `npm start`
+김종성 장재근 지서영 전진 박성수
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 사이트 주소
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+https://meomeok-z-front.vercel.app/
 
 ### `npm test`
 
